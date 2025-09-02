@@ -36,7 +36,14 @@ public class NonPersistentUserRepository implements UserRepository<User, UUID>{
         
     }
 
-    
+    public User findById(UUID id) {
+        for(User u : this.interalData) {
+            if(u.getId().equals(id)) {
+                return u;
+            }
+        }
+        return null;
+    } 
     
 
 

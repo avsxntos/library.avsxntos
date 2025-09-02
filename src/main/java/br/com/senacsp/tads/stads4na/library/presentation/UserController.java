@@ -28,5 +28,15 @@ public class UserController {
         return ResponseEntity.ok().body(this.userService.findAll());
         
     }
+    //http://localhost:8080/api/users/{id}
+    @GetMapping("/{id}")
+    public ResponseEntity<User> fetchbyId(@PathVariable UUID id) {
+        User user = this.userService.findById(id);
+        if (user == null) {
+            return ResponseEntity.notFound().build();
+        
+            return ResponseEntity.ok(user);
+        }
+        
+    }
 }
-// teste

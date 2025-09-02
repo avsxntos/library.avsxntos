@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 
 
 public interface UserService {
+    public List<User> findAll();
 
-    List<User> findAll();
-
+    public <User> findById(UUID id);
+   
 }
